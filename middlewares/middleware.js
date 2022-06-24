@@ -37,7 +37,7 @@ const handleAllUsers = (req, res, next) => {
 }
 
 const handleCreateNewExercise = (req, res, next) => {
-    insertNewExercise(req.body, (err, data) => {
+    insertNewExercise(req.params._id,req.body, (err, data) => {
         if (err) {
             next();
             return;
