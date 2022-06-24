@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/style.css" type="text/css" />
+    <title>Exercise tracker</title>
+</head>
+
+<body>
+    <main class="container">
+        <header id="head">
+            <h1>Exercise tracker</h1>
+        </header>
+        <section id="body">
+            <div class="forms">
+                <form action="/api/users" id="user" class="form" method="post">
+                    <h2>Create a New User</h2>
+                    <code class="code">POST /api/users</code>
+                    <div class="form-control">
+                        <input type="text" name="username" id="username" placeholder="username" required />
+                    </div>
+                    <div class="form-control">
+                        <input type="submit" value="submit" />
+                    </div>
+                </form>
+                <form action="/api/users/exercise" id="exercise" class="form" method="post">
+                    <h2>Add exercises</h2>
+                    <code class="code">POST /api/users/:_id/exercises</code>
+                    <div class="form-control">
+                        <input type="text" name="id" id="id" placeholder=":_id" required />
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="description" id="description" placeholder="description*" required />
+                    </div>
+                    <div class="form-control">
+                        <input type="number" min="1" name="duration" id="duration" placeholder="duration* (mins.)" required />
+                    </div>
+                    <div class="form-control">
+                        <input type="date" name="date" id="date" placeholder="date (yyyy-mm-dd)" pattern="\d{4}-\d{2}-\d{2}" />
+                    </div>
+                    <div class="form-control">
+                        <input type="submit" value="submit" />
+                    </div>
+                </form>
+            </div>
+            <div id="hint">
+                <p>
+                    <strong>GET user's exercise log:</strong>
+                    <code class="code">GET /api/users/:_id/logs?[from][&to][&limit]</code
+            >
+          </p>
+          <p><strong>[ ]</strong> = optional</p>
+          <p>
+            <strong> from, to </strong>= dates (yyyy-mm-dd);
+            <strong> limit </strong>= number
+          </p>
+        </div>
+      </section>
+      <footer class="footer">
+        <strong> By</strong>
+        <a href="https://ilyaskritet.w3spaces.com/" target="_blank"
+          >Kritet ilyas</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>
