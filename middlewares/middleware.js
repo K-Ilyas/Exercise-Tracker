@@ -47,7 +47,7 @@ const handleCreateNewExercise = (req, res, next) => {
                 "_id": data._id,
                 "username": data.username,
                 "date": (req.body.date != "" ? new Date(req.body.date) : new Date()).toDateString(),
-                "duration": req.body.duration,
+                "duration": parseInt(req.body.duration),
                 "description": req.body.description
             }
             next();
